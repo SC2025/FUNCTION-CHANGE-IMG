@@ -19,8 +19,21 @@ opacity: 1;
 font-weight: 1000;
 }
 
-
-
+#qr_div{
+    margin: 3px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+}
+#qr{
+    margin: 3px;
+    padding: 3px;
+    display: flex;
+    border: 2px solid black;
+}
 
 
 #section_A{
@@ -103,6 +116,9 @@ padding: 4px;
 border: 2px solid black;
 color: rgb(0, 0, 0);
 }
+
+
+
 #qr_info_all_data{
 border: 2px solid black;
 padding: 5px;
@@ -245,6 +261,17 @@ align-items: center;
     opacity: 0;
     font-size: 0px;
 }
+.qrimgbottomhedding{
+    background-color: rgb(235, 171, 171);
+    padding: 2PX;
+    border: 1px solid black;
+    border-radius: 9%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
 </style>
 </head>
 <body id="body">
@@ -348,7 +375,7 @@ and proceed to payment.`)">
     <option value="12">12  pieces</option>
 </select>
 
-<button  class="button" id="secB_btn" onclick="secB()">Procede To Payment</button>
+<button  class="button" id="secB_btn" onclick="secB()">view order summary</summary></button>
 
 
 
@@ -363,7 +390,7 @@ and proceed to payment.`)">
 <h3><p id="product_discount"></p></h3>
 <h3><p id="product_prise-print"></p></h3>
 <h3><p id="product_quantity-print"></p></h3>
-<h3><p id="product_finalprise-print"></p></h3>
+<h3><p class="qrimgbottomhedding" id="product_finalprise-print"></p></h3>
 </div>
 <div>
     <h3><p id="select_villege"></p></h3> 
@@ -372,16 +399,20 @@ and proceed to payment.`)">
 </div>
 
 </p>
-<div >
-
-    <img id="qr"  src=""  alt=""> 
+<div>
+    <div id="qr_div">
+    <img id="qr"  src=""  alt="qr.img"> 
+    
+  
+</div>
+<p class="qrimgbottomhedding">scan QR code and payment</p>
 <div class="paymentall">
     <marquee
     behavior="alternate"
     id="marquee"
     scrollamount = "7">
 
-    <div class="button2">------Payment App option-----</div>
+    <div class="button2">-Payment App options-</div>
     <a id="google_pay2" href=""><button class="gpbtn"><img class="gp"   src="pp.png" alt="" ></button></a> 
     <a id="google_pay1" href=""><button class="gpbtn"><img  class="gp" src="gp.png" alt="" ></button></a> 
     <a id="google_pay3" href=""><button class="gpbtn"><img  class="gp"  src="ptm.png" alt="" ></button></a> 
@@ -432,7 +463,7 @@ and proceed to payment.`)">
 behavior="alternate"
 id="marquee"
 scrollamount = "4">
-<button onclick="gotowhatsapp()"   class="button"  id="get-bill" >Click submit @ whatsapp</button>
+<button onclick="gotowhatsapp()"   class="button"  id="get-bill" >Click to final submit</button>
 </marquee>
 </div> 
 
@@ -488,7 +519,7 @@ var z = document.getElementById("i12")
 
 
 
-
+//id print perr
 function ORDER_ID_PREE() {
       myDate = new Date
             var hours = myDate.getHours(); 
@@ -503,7 +534,7 @@ function ORDER_ID_PREE() {
 
 
 
-
+//id print next
     function ORDER_ID_NEXT(){
     
     // Creating the date instance
@@ -531,7 +562,7 @@ function ORDER_ID_PREE() {
     } ;ORDER_ID_NEXT();
     c.innerHTML = a.innerHTML + b.innerHTML;
 
-
+//delivered date 
  function seven_days_after_date(){
     
     // Creating the date instance
@@ -596,9 +627,9 @@ d.disabled = true;
     personal information save successfully;
     fill product information.`)
     };
+
     g.style.opacity = 1;
     h.innerHTML = `-- ${d.value} select product options --`
-
 
 
   
@@ -634,6 +665,13 @@ alert(`${d.value}
 // var full_address = f.innerHTML;
 // s_two.innerHTML = full_address;
 
+//alert payment page 
+setTimeout(() => {
+        alert(`${d.value}
+        कोणत्याही पेमेंट अँप ने किंवा हा कोड स्कॅन करून ${prise} RS पेमेंट करा. 
+        पेमेंट झाल्यानंतर UPI Transaction id चे शेवटचे 4 डिजिट पहा आणि बॅक येऊन लिहा.`)
+    }, 2000);
+
 
 // order id 
 v.innerHTML =  `Order ID :- ${c.innerHTML}`
@@ -667,13 +705,13 @@ r.innerHTML = `${d.value} your order summary `
 //befor 7 day 
 var seven_z = document.getElementById("i12")
 //PAYMENT QR
-var qr_link = "https://api.qrserver.com/v1/create-qr-code/?data="
-document.getElementById("qr").src = "https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=aniruddhamane1000-3@oksbi&pn=Mr.Aniruddha%20Mahesh%20Mane&am=100.00&cu=INR&tn=asdff";
 
-// PAYMENT
-document.getElementById("google_pay1").href =  "upi://pay?pa=aniruddhamane1000-3@okicici&pn=Sahyadri%20Collection&am="+prise+"&cu=INR&tn=Sahyadri_collection"
-document.getElementById("google_pay2").href =  "upi://pay?pa=aniruddhamane1000-3@okicici&pn=Sahyadri%20Collection&am="+prise+"&cu=INR&tn=Sahyadri_collection"
-document.getElementById("google_pay3").href =  "upi://pay?pa=aniruddhamane1000-3@okicici&pn=Sahyadri%20Collection&am="+prise+"&cu=INR&tn=Sahyadri_collection"
+document.getElementById("qr").src = "https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=aniruddhamane1000-3@okicici%26am="+prise+"%26tn=" 
+
+// PAYMENTAW   https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=onkarjha2003@sbi%26am=1500%26tn
+document.getElementById("google_pay1").href =  "https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=aniruddhamane1000-3@okicici%26am="+prise+"%26tn=" 
+document.getElementById("google_pay2").href =  "https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=aniruddhamane1000-3@okicici%26am="+prise+"%26tn=" 
+document.getElementById("google_pay3").href =  "https://api.qrserver.com/v1/create-qr-code/?data=upi://pay?pa=aniruddhamane1000-3@okicici%26am="+prise+"%26tn=" 
 }
 
 
@@ -705,7 +743,11 @@ function secC(){
 
 
 
-
+setTimeout(() => {
+    alert(`${d.value} 
+    click to final submit या बटन ला क्लिक करा  ;तुम्हाला व्हाट्सअप वर ऑर्डर स्मरी भेटेल आणि ऑर्डर कन्फर्म होईल`
+);
+},2000);
 
 
 
@@ -732,8 +774,14 @@ function gotowhatsapp(){
  var b11 =  document.getElementById("i11").innerHTML ;
  var b12 =  document.getElementById("i12").innerHTML ;
 
+if (b2 === "" || b3 === ""||b4 === "") {
+    alert("please save again -Personal Details-")
+} else if(b5 === "" || b6 === ""||b7 === ""||b8 === ""||b9 === ""){
+    alert(b2+"-please save again product options -")
+}else if(b11 === "please enter again Transaction id "){
+    alert(b2+"-please enter -")
+}else{
 
- 
     var url = "https://wa.me/919834926132?text="
     + "ORDER CONFIRM" + "%0a"
     + b1 + "%0a" + "%0a"
@@ -750,6 +798,9 @@ function gotowhatsapp(){
      + b11+ "%0a" + "%0a"
      + "SEND SMS" 
     window.open(url, '_blank').focus();
+}
+ 
+   
     }
 
    
