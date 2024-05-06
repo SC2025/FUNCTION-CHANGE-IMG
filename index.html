@@ -724,14 +724,15 @@ function secC(){
     //id if elese
  if(s.value == "")
  {
-    alert(`${d.value}Please enter UPI Transaction id ;
+    alert(`${d.value} 
+    Please enter UPI Transaction id ;
     without this information Order is not confirmed.`);
     s.style.backgroundColor = "red";
     secB()
   }else{
    t.style.opacity = 1;
    l.style.opacity = 0.2;
-  }
+  
   document.getElementById("i1").innerHTML = `Order ID :- ${c.innerHTML}`;
   document.getElementById("i2").innerHTML = `name of custemer :- ${d.value}`;
   document.getElementById("i3").innerHTML = `Villege Name :- ${e.value}`;
@@ -755,7 +756,7 @@ setTimeout(() => {
 );
 },2000);
 
-
+  }
 
 
 
