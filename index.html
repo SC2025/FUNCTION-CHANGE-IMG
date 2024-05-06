@@ -51,7 +51,7 @@ font-weight: 1000;
 #section_B{
 border: 2PX solid rgb(255, 0, 0);
 border: 2PX solid;
-opacity: 1;
+opacity: 0;
 padding: 10px;
 height: 30%;
 
@@ -72,7 +72,7 @@ font-weight: 1000;
 }
 #section_D{
 border: 2PX solid red;
-opacity: 1;
+opacity: 0;
 padding: 10px;
 gap: 10px;
 font-size: 20px;
@@ -83,7 +83,9 @@ padding: 5px;
 
 }
 
-#marquee
+.sec_d_p{
+    font-size: 13px;
+}
 
 option{
 padding: 5px;
@@ -391,19 +393,17 @@ and proceed to payment.`)">
 <h3><p id="product_prise-print"></p></h3>
 <h3><p id="product_quantity-print"></p></h3>
 <h3><p class="qrimgbottomhedding" id="product_finalprise-print"></p></h3>
-</div>
+
 <div>
     <h3><p id="select_villege"></p></h3> 
     <h3><p id="full_address"></p></h3>
     <h3><p id="teansaction_id"></p></h3>
 </div>
 
-</p>
+
 <div>
     <div id="qr_div">
     <img id="qr"  src=""  alt="qr.img"> 
-    
-  
 </div>
 <p class="qrimgbottomhedding">scan QR code and payment</p>
 <div class="paymentall">
@@ -428,7 +428,7 @@ and proceed to payment.`)">
 <BUtton class="button"  onclick="secC()">preview And Submit Payment data </BUtton>
 </div> 
 
-
+</div>
 
 
 
@@ -444,19 +444,19 @@ and proceed to payment.`)">
 
 <div id="section_D">
 <p class="main_hedding" id="secD_heding"></p>
-<p id ="all_sec_d_info"></p>
-<p id="i1"></p>
-<p id="i2"></p>
-<p  id="i3"></p>
-<p  id="i4"></p>
-<p  id="i5"></p>
-<p  id="i6"></p>
-<p  id="i7"></p>
-<p  id="i8"></p>
-<p  id="i9"></p>
-<p  id="i10"></p>
-<p  id="i11"></p>
-<p id="i12"></p>
+<p class="sec_d_p" id ="all_sec_d_info"></p>
+<p class="sec_d_p" id="i1"></p>
+<p class="sec_d_p" id="i2"></p>
+<p class="sec_d_p"  id="i3"></p>
+<p class="sec_d_p"  id="i4"></p>
+<p class="sec_d_p"  id="i5"></p>
+<p class="sec_d_p"  id="i6"></p>
+<p class="sec_d_p"  id="i7"></p>
+<p class="sec_d_p"  id="i8"></p>
+<p class="sec_d_p"  id="i9"></p>
+<p class="sec_d_p"  id="i10"></p>
+<p class="sec_d_p"  id="i11"></p>
+<p class="sec_d_p" id="i12"></p>
 
 
 <marquee
@@ -474,6 +474,7 @@ scrollamount = "4">
 
 <script>
     //section a
+var secA_div = document.getElementById("section_A");
 var a = document.getElementById("op");
 var b = document.getElementById("on");
 var c = document.getElementById("oid");
@@ -627,7 +628,7 @@ d.disabled = true;
     personal information save successfully;
     fill product information.`)
     };
-
+    secA_div.style.opacity = 0.2;
     g.style.opacity = 1;
     h.innerHTML = `-- ${d.value} select product options --`
 
@@ -651,6 +652,7 @@ d.disabled = true;
         i.disabled = true
     j.disabled = true;
     k.disabled = true;
+    g.style.opacity = 0.2;
 l.style.opacity = 1;
 alert(`${d.value} 
     product information save successfully;
@@ -669,7 +671,8 @@ alert(`${d.value}
 setTimeout(() => {
         alert(`${d.value}
         कोणत्याही पेमेंट अँप ने किंवा हा कोड स्कॅन करून ${prise} RS पेमेंट करा. 
-        पेमेंट झाल्यानंतर UPI Transaction id चे शेवटचे 4 डिजिट पहा आणि बॅक येऊन लिहा.`)
+        पेमेंट झाल्यानंतर UPI Transaction id चे शेवटचे 4 डिजिट पहा आणि बॅक येऊन लिहा.
+        पेमेंट झाले असेल तर फक्त UPI Transaction id लिहा`)
     }, 2000);
 
 
@@ -699,7 +702,7 @@ m.innerHTML = `Product name :-${name_product_name}`
 //    //transaction id
 //    var transaction_id = s.innerHTML;
 
-l.style.opacity = 1;
+// l.style.opacity = 1;
 r.innerHTML = `${d.value} your order summary `
 
 //befor 7 day 
@@ -721,11 +724,13 @@ function secC(){
     //id if elese
  if(s.value == "")
  {
-    alert("Please enter UPI Transaction id ;without this information Order is not confirmed.");
+    alert(`${d.value}Please enter UPI Transaction id ;
+    without this information Order is not confirmed.`);
     s.style.backgroundColor = "red";
     secB()
   }else{
-   t.style.opacity 
+   t.style.opacity = 1;
+   l.style.opacity = 0.2;
   }
   document.getElementById("i1").innerHTML = `Order ID :- ${c.innerHTML}`;
   document.getElementById("i2").innerHTML = `name of custemer :- ${d.value}`;
@@ -740,12 +745,13 @@ function secC(){
   //MISSING I12 ADDJEST
   document.getElementById("i12").innerHTML = `order delivery before ${c_c.innerHTML}`;
   document.getElementById("i11").innerHTML = `UPI transaction ID :- XXXXXXXX${s.value}`;
-
+document.getElementById("secD_heding").innerHTML = `- ${d.value} your order summary click to final submit-`;
 
 
 setTimeout(() => {
     alert(`${d.value} 
-    click to final submit या बटन ला क्लिक करा  ;तुम्हाला व्हाट्सअप वर ऑर्डर स्मरी भेटेल आणि ऑर्डर कन्फर्म होईल`
+    click to final submit या बटन ला क्लिक करा ;
+    तुम्हाला व्हाट्सअप वर ऑर्डर स्मरी भेटेल आणि ऑर्डर कन्फर्म होईल`
 );
 },2000);
 
