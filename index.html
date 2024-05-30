@@ -3,21 +3,21 @@
 
 <div class="slideshow-container">
 
-<div class="mySlidesh1 fade">
+<div class="mySlidesH1 fade">
   <div class="numbertext">1 / 3</div>
-  <img src="h1A.jpg" style="width:100%">
+  <img src="H1A.jpg" style="width:100%">
   <div class="text">Sample 1</div>
 </div>
 
-<div class="mySlidesh1 fade">
+<div class="mySlidesH1 fade">
   <div class="numbertext">2 / 3</div>
-  <img src="h1.jpg" style="width:100%">
+  <img src="H1.jpg" style="width:100%">
   <div class="text">sample 2</div>
 </div>
 
-<div class="mySlidesh1 fade">
+<div class="mySlidesH1 fade">
   <div class="numbertext">3 / 3</div>
-  <img src="h1C.jpg" style="width:100%">
+  <img src="H1C.jpg" style="width:100%">
   <div class="text">Sample 3</div>
 </div>
 
@@ -25,30 +25,30 @@
 <br>
 
 <div style="text-align:center">
-  <span class="doth1"></span> 
-  <span class="doth1"></span> 
-  <span class="doth1"></span> 
+  <span class="dotH1"></span> 
+  <span class="dotH1"></span> 
+  <span class="dotH1"></span> 
 </div>
 </div>
 
 
-var slideh1Index = 0;
-showSlidesh1();
+var slideH1Index = 0;
+showSlidesH1();
 
-function showSlidesh1() {
+function showSlidesH1() {
   let i;
-  let slidesh1 = document.getElementsByClassName("mySlidesh1");
-  let dotsh1 = document.getElementsByClassName("doth1");
-  for (i = 0; i < slidesh1.length; i++) {
-    slidesh1[i].style.display = "none";  
+  let slidesH1 = document.getElementsByClassName("mySlidesH1");
+  let dotsH1 = document.getElementsByClassName("dotH1");
+  for (i = 0; i < slidesH1.length; i++) {
+    slidesH1[i].style.display = "none";  
   }
-  slideh1Index++;
-  if (slideh1Index > slidesh1.length) {slideh1Index = 1}    
-  for (i = 0; i < dotsh1.length; i++) {
-    dotsh1[i].className = dotsh1[i].className.replace(" active", "");
+  slideH1Index++;
+  if (slideH1Index > slidesH1.length) {slideH1Index = 1}    
+  for (i = 0; i < dotsH1.length; i++) {
+    dotsH1[i].className = dotsH1[i].className.replace(" active", "");
   }
-  slidesh1[slideh1Index-1].style.display = "block";  
-  dotsh1[slideh1Index-1].className += " active";
-  setTimeout(showSlidesh1, 2000); // Change image every 2 seconds
+  slidesH1[slideH1Index-1].style.display = "block";  
+  dotsH1[slideH1Index-1].className += " active";
+  setTimeout(showSlidesH1, 2000); // Change image every 2 seconds
 }
 
