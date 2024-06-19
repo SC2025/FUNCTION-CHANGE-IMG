@@ -56,23 +56,23 @@
                     </div>
 
 
-var slideH1Index = 0;
-showSlidesH1();
+var slideWK9Index = 0;
+showSlidesWK9();
 
-function showSlidesH1() {
+function showSlidesWK9() {
   let i;
-  let slidesH1 = document.getElementsByClassName("mySlidesH1");
-  let dotsH1 = document.getElementsByClassName("dotH1");
-  for (i = 0; i < slidesH1.length; i++) {
-    slidesH1[i].style.display = "none";  
+  let slidesWK9 = document.getElementsByClassName("mySlidesWK9");
+  let dotsWK9 = document.getElementsByClassName("dotWK9");
+  for (i = 0; i < slidesWK9.length; i++) {
+    slidesWK9[i].style.display = "none";  
   }
-  slideH1Index++;
-  if (slideH1Index > slidesH1.length) {slideH1Index = 1}    
-  for (i = 0; i < dotsH1.length; i++) {
-    dotsH1[i].className = dotsH1[i].className.replace(" active", "");
+  slideWK9Index++;
+  if (slideWK9Index > slidesWK9.length) {slideWK9Index = 1}    
+  for (i = 0; i < dotsWK9.length; i++) {
+    dotsWK9[i].className = dotsWK9[i].className.replace(" active", "");
   }
-  slidesH1[slideH1Index-1].style.display = "block";  
-  dotsH1[slideH1Index-1].className += " active";
-  setTimeout(showSlidesH1, 2000); // Change image every 2 seconds
+  slidesWK9[slideWK9Index-1].style.display = "block";  
+  dotsWK9[slideWK9Index-1].className += " active";
+  setTimeout(showSlidesWK9, 2000); // Change image every 2 seconds
 }
 
