@@ -4,50 +4,50 @@
                         <div class="table-sample">
                             <div class="slideshow-container">
                         
-                                <div class="mySlidesWK13 fade">
+                                <div class="mySlidesM13 fade">
                                   <div class="numbertext">1</div>
-                                  <img src="WK13A.jpg" style="width:100%">
+                                  <img src="M13A.jpg" style="width:100%">
                                   <div class="text">Sample 1</div>
                                 </div>
                                 
-                                <div class="mySlidesWK13 fade">
+                                <div class="mySlidesM13 fade">
                                   <div class="numbertext">2</div>
-                                  <img src="WK13B.jpg" style="width:100%">
+                                  <img src="M13B.jpg" style="width:100%">
                                   <div class="text">sample 2</div>
                                 </div>
                                 
-                                <div class="mySlidesWK13 fade">
+                                <div class="mySlidesM13 fade">
                                   <div class="numbertext">3</div>
-                                  <img src="WK13C.jpg" style="width:100%">
+                                  <img src="M13C.jpg" style="width:100%">
                                   <div class="text">Sample 3</div>
                                 </div>
                                 
-                                <div class="mySlidesWK13 fade">
+                                <div class="mySlidesM13 fade">
                                     <div class="numbertext">4</div>
-                                    <img src="WK13D.jpeg" style="width:100%">
+                                    <img src="M13D.jpeg" style="width:100%">
                                     <div class="text">Sample 4</div>
                                   </div>
                         
-                                  <div class="mySlidesWK13 fade">
+                                  <div class="mySlidesM13 fade">
                                     <div class="numbertext">5</div>
-                                    <img src="WK13E.jpeg" style="width:100%">
+                                    <img src="M13E.jpeg" style="width:100%">
                                     <div class="text">Sample 5</div>
                                   </div>
                                 </div>
                             
                                 
                                 <div style="text-align:center">
-                                    <span class="dotWK13"></span> 
-                                    <span class="dotWK13"></span> 
-                                  <span class="dotWK13"></span> 
-                                  <span class="dotWK13"></span> 
-                                  <span class="dotWK13"></span> 
+                                    <span class="dotM13"></span> 
+                                    <span class="dotM13"></span> 
+                                  <span class="dotM13"></span> 
+                                  <span class="dotM13"></span> 
+                                  <span class="dotM13"></span> 
                                 </div>
                                 
                                 
                                <div class="table">
                                <div class="product-name">
-                                   <DIV class="PC">Product code-WK13</DIV>
+                                   <DIV class="PC">Product code-M13</DIV>
                                    ALFINE GOWN - FREE SIZE ( 2 PIECES COMBO )</div>
                                  <DIV class="ONE_P_PRICE">1 PIECE = 334 RS</DIV>
                         
@@ -56,23 +56,23 @@
                     </div>
 
 
-var slideWK13Index = 0;
-showSlidesWK13();
+var slideM13Index = 0;
+showSlidesM13();
 
-function showSlidesWK13() {
+function showSlidesM13() {
   let i;
-  let slidesWK13 = document.getElementsByClassName("mySlidesWK13");
-  let dotsWK13 = document.getElementsByClassName("dotWK13");
-  for (i = 0; i < slidesWK13.length; i++) {
-    slidesWK13[i].style.display = "none";  
+  let slidesM13 = document.getElementsByClassName("mySlidesM13");
+  let dotsM13 = document.getElementsByClassName("dotM13");
+  for (i = 0; i < slidesM13.length; i++) {
+    slidesM13[i].style.display = "none";  
   }
-  slideWK13Index++;
-  if (slideWK13Index > slidesWK13.length) {slideWK13Index = 1}    
-  for (i = 0; i < dotsWK13.length; i++) {
-    dotsWK13[i].className = dotsWK13[i].className.replace(" active", "");
+  slideM13Index++;
+  if (slideM13Index > slidesM13.length) {slideM13Index = 1}    
+  for (i = 0; i < dotsM13.length; i++) {
+    dotsM13[i].className = dotsM13[i].className.replace(" active", "");
   }
-  slidesWK13[slideWK13Index-1].style.display = "block";  
-  dotsWK13[slideWK13Index-1].className += " active";
-  setTimeout(showSlidesWK13, 2000); // Change image every 2 seconds
+  slidesM13[slideM13Index-1].style.display = "block";  
+  dotsM13[slideM13Index-1].className += " active";
+  setTimeout(showSlidesM13, 2000); // Change image every 2 seconds
 }
 
